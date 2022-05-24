@@ -10,19 +10,19 @@ require "faker"
 Listing.destroy_all
 User.destroy_all
 
-User.create(
+User.create!(
   email: "admin@finest.com",
   name: "admin",
   password: "123456"
 )
 
-jess = User.create(
+jess = User.create!(
   email: "advertiser@finest.com",
   name: "L'armoire de Jess",
   password: "123456"
 )
 
-User.create(
+User.create!(
   email: "renter@finest.com",
   name: "Les Studios de Julien",
   password: "123456"
@@ -30,7 +30,7 @@ User.create(
 
 15.times do
   temp = rand(0..6)
-  Listing.create(
+  Listing.create!(
     category: temp,
     user_id: jess.id,
     style: rand(0..8),

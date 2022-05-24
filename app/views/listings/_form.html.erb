@@ -1,0 +1,18 @@
+<%= simple_form_for(@listing) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :category, collection: Listing.categories %>
+    <%= f.input :style, collection: Listing.styles %>
+    <%= f.input :description %>
+    <%= f.input :deliverable %>
+    <%= f.input :price_per_day %>
+    <%= f.input :city %>
+    <%= f.input :product_image, as: :file, label: "Upload image" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
