@@ -59,6 +59,8 @@ gem "faker"
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  # We don’t want to share those secret keys on GitHub.
+  # We can use the dotenv gem for security:
   gem "dotenv-rails"
 end
 
