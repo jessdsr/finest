@@ -4,7 +4,11 @@ class ListingPolicy < ApplicationPolicy
     # Uncomment this 'resolve' action to see all the index of listings
     # In another situation we would have return the index w/ Listings.all
     def resolve
-      scope.all
+      if user.admin?
+        scope.all
+      else
+        scope.where(user: user)
+      end
     end
   end
 
@@ -18,5 +22,17 @@ class ListingPolicy < ApplicationPolicy
 
   def create?
     true
+  end
+
+  def edit?
+    update?
+  end
+
+  def update?
+    record.user == user || user.admin?
+  end
+
+  def destroy?
+    record.user == user || user.admin?
   end
 end

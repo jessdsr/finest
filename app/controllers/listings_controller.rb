@@ -1,5 +1,6 @@
 class ListingsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: %i[index show]
+  before_action :set_listing, only: %i[show edit update destroy]
 
   # GET /listings
   def index
@@ -10,7 +11,6 @@ class ListingsController < ApplicationController
 
   # GET /listings/1
   def show
-    @listing = Listing.find(params[:id])
     authorize @listing
   end
 
@@ -32,9 +32,37 @@ class ListingsController < ApplicationController
     end
   end
 
+  # GET /listings/1/edit
+  def edit
+    authorize @listing
+  end
+
+  # PATCH /restaurants/1
+  def update
+    @listing.user = current_user
+    authorize @listing
+    if @listing.update(listing_params)
+      redirect_to @listing, notice: "Furniture was successfully updated"
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  # DELETE /restaurants/1
+
+  def destroy
+    authorize @listing
+    @listing.destroy
+    redirect_to listings_path, notice: "Furniture was successfully deleted"
+  end
+
   private
 
   def listing_params
-    params.require(:listing).permit(:style, :category, :description, :price_per_day, :city)
+    params.require(:listing).permit(:category, :style, :description, :price_per_day, :city)
+  end
+
+  def set_listing
+    @listing = Listing.find(params[:id])
   end
 end

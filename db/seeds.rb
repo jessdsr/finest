@@ -13,7 +13,8 @@ User.destroy_all
 User.create!(
   email: "admin@finest.com",
   name: "admin",
-  password: "123456"
+  password: "123456",
+  admin: true
 )
 
 jess = User.create!(
