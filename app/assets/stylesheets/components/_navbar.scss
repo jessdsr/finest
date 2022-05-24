@@ -1,12 +1,97 @@
-.navbar-lewagon {
+/* NAVBAR STYLING STARTS */
+.navbar {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
-  background: white;
-}
+  padding: 20px;
+  padding-left: 100px;
+  padding-right: 50px;
+  background-color: #13211B;
+  color: #fff;
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
+ }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+ .nav-links a {
+  color: #fff;
+ }
+
+
+ /* LOGO */
+ .logo {
+  width: 400px;
+  height: 100px;
+
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+ }
+
+ .logo-title {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 45px;
+  letter-spacing: 0.56em ;
+ }
+
+
+ /* NAVBAR MENU */
+ .menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+ }
+
+ .menu li:hover {
+  background-color: #337D8C;
+  border-radius: 5px;
+  transition: 0.3s ease;
+ }
+
+ .menu li {
+  padding: 5px 14px;
+ }
+
+
+ /* DROPDOWN MENU */
+ .services {
+  position: relative;
+ }
+
+ .dropdown {
+  background-color: rgb(1, 139, 139);
+  padding: 1em 0;
+  position: absolute; /*WITH RESPECT TO PARENT*/
+  display: none;
+  border-radius: 8px;
+  top: 35px;
+ }
+
+ .dropdown li + li {
+  margin-top: 10px;
+ }
+
+ .dropdown li {
+  padding: 0.5em 1em;
+  width: 8em;
+  text-align: center;
+ }
+
+ .dropdown li:hover {
+  background-color: #4c9e9e;
+ }
+
+ .services:hover .dropdown {
+  display: block;
+ }
+
+ .navbar-avatar {
+  left: 86.77%;
+  right: 6.61%;
+  top: 17.11%;
+  bottom: 17.11%;
+ }
+
+ .avatar {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
