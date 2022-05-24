@@ -3,12 +3,16 @@ class ListingPolicy < ApplicationPolicy
     # NOTE: Be explicit about which records you allow access to!
     # Uncomment this 'resolve' action to see all the index of listings
     # In another situation we would have return the index w/ Listings.all
+    # def resolve
+    #   if user.nil? || user.admin
+    #     scope.all
+    #   else
+    #     scope.where(user: user)
+    #   end
+    # end
+
     def resolve
-      if user.admin?
-        scope.all
-      else
-        scope.where(user: user)
-      end
+      scope.all
     end
   end
 
@@ -29,10 +33,10 @@ class ListingPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user || user.admin?
+    record.user == user
   end
 
   def destroy?
-    record.user == user || user.admin?
+    record.user == user
   end
 end
