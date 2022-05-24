@@ -1,5 +1,7 @@
 class Listing < ApplicationRecord
   belongs_to :user
+  # to add when working with cloudinary to attach the picture
+  has_one_attached :photo
 
   validates :style, :category, :description, :price_per_day, :city, presence: true
 
