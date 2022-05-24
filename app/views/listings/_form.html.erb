@@ -3,8 +3,8 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :category, collection: Listing.categories %>
-    <%= f.input :style, collection: Listing.styles %>
+    <%= f.input :category, collection: Listing.categories.map { |e| [e[0],e[0]] } %>
+    <%= f.input :style, collection: Listing.styles.map { |e| [e[0],e[0]] } %>
     <%= f.input :description %>
     <%= f.input :deliverable %>
     <%= f.input :price_per_day %>
