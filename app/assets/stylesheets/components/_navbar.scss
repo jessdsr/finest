@@ -32,6 +32,7 @@
   display: inline;
   float: right;
   font-size: 18px;
+  margin-right: 3vw;
 }
 
 .mynav > .mynav-links > a {
@@ -42,7 +43,8 @@
 }
 
 .mynav > .mynav-links > a:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #337D8C;
+  border-radius: 15%;
 }
 
 .mynav > #mynav-check {
