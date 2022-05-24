@@ -29,6 +29,7 @@
   list-style: none;
  }
 
+ // Wrapper to always get the footer at least at the bottom of the view if the page has little to no content
  .mywrapper {
   display: flex;
   flex-direction: column;
