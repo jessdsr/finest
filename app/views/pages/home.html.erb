@@ -1,87 +1,34 @@
 <div class=content-wrap>
 
-<h1>Exceptional furniture all over the world</h1>
-<br>
-<h3><em>A selection of exceptional furniture with unique designs. Top of the line equipment and services and a dedicated furniture designer.</em></h3>
+  <h1>Exceptional furniture all over the world</h1>
+  <br>
+  <h3><em>A selection of exceptional furniture with unique designs. Top of the line equipment and services and a dedicated furniture designer.</em></h3>
 
-
-<div class="cards">
-
-  <div class="card content">
-    <div class="card-content">
-      <a href="https://www.chrono24.fr/rolex/rolex-daytona-black-dial-random-serial--id23488565.htm" target="_blank">
-        <div class="card-img">
-          <img src="https://www.gallery-wa.com/wp-content/uploads/wa-design-gallery-sori-yanagi-buterffly-elephant-stool-adrian-pearsall-kenzo-tange-american-craft-studio-prouve-perriand-isamu-noguchi-akari-rudolph-condon-andre-borderie.jpg">
-        </div>
-        <div class="card-label">New!</div>
-        <div class="card-infos">
-          <div>
-            <h2>Original Satoshi Japonese Table</h2>
-            <p>Short description here!</p>
+  <div class="cards">
+    <% listings = Listing.all.first(4) %>
+    <% photo_urls = ["https://www.gallery-wa.com/wp-content/uploads/wa-design-gallery-sori-yanagi-buterffly-elephant-stool-adrian-pearsall-kenzo-tange-american-craft-studio-prouve-perriand-isamu-noguchi-akari-rudolph-condon-andre-borderie.jpg",
+                     "https://www.journaldujapon.com/wp-content/uploads/2021/06/Akari-24-N-1951-_-Wa-design-gallery--scaled.jpg",
+                     "https://inter-fair.com/Content/img/Logos/49/4937/493743/header4.jpg",
+                     "https://i.pinimg.com/736x/c6/c7/81/c6c781a9eaaae8814c09878be167561c.jpg"] %>
+    <% listings.each_with_index do |listing, index| %>
+      <div class="card content">
+        <div class="card-content">
+          <div class="card-img">
+            <%= image_tag photo_urls[index] %>
           </div>
-            <h2 class="card-pricing">£99.99</h2>
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user avatar-bordered">
-        </div>
-      </a>
-    </div>
-  </div>
-
-  <div class="card content">
-    <div class="card-content">
-      <a href="https://www.chrono24.fr/rolex/rolex-daytona-black-dial-random-serial--id23488565.htm" target="_blank">
-        <div class="card-img">
-          <img src="https://www.journaldujapon.com/wp-content/uploads/2021/06/Akari-24-N-1951-_-Wa-design-gallery--scaled.jpg">
-        </div>
-        <div class="card-label">New!</div>
-        <div class="card-infos">
-          <div>
-            <h2>Original Satoshi Japonese Table</h2>
-            <p>Short description here!</p>
+          <div class="card-label">New!</div>
+          <div class="card-infos">
+            <div>
+              <h2><%= listing.name %></h2>
+              <p><%= listing.description %></p>
+            </div>
+            <div>
+              <h2 class="card-trip-pricing"><%= listing.price_per_day %>€</h2>
+              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+            </div>
           </div>
-            <h2 class="card-pricing">£99.99</h2>
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user avatar-bordered">
         </div>
-      </a>
-    </div>
+      </div>
+    <% end %>
   </div>
-
-  <div class="card content">
-    <div class="card-content">
-      <a href="https://www.chrono24.fr/rolex/rolex-daytona-black-dial-random-serial--id23488565.htm" target="_blank">
-        <div class="card-img">
-          <img src="https://inter-fair.com/Content/img/Logos/49/4937/493743/header4.jpg">
-        </div>
-        <div class="card-label">New!</div>
-        <div class="card-infos">
-          <div>
-            <h2>Original Satoshi Japonese Table</h2>
-            <p>Short description here!</p>
-          </div>
-            <h2 class="card-pricing">£99.99</h2>
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user avatar-bordered">
-        </div>
-      </a>
-    </div>
-  </div>
-
-<div class="card content">
-    <div class="card-content">
-      <a href="https://www.chrono24.fr/rolex/rolex-daytona-black-dial-random-serial--id23488565.htm" target="_blank">
-        <div class="card-img">
-          <img src="https://i.pinimg.com/736x/c6/c7/81/c6c781a9eaaae8814c09878be167561c.jpg">
-        </div>
-        <div class="card-label">New!</div>
-        <div class="card-infos">
-          <div>
-            <h2>Original Satoshi Japonese Table</h2>
-            <p>Short description here!</p>
-          </div>
-            <h2 class="card-pricing">£99.99</h2>
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user avatar-bordered">
-        </div>
-      </a>
-    </div>
-  </div>
-
-</div>
 </div>
