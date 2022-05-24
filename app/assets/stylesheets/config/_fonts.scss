@@ -14,3 +14,9 @@ $headers-font: "Nunito", "Helvetica", "sans-serif";
 //        font-url('FontFile.ttf') format('truetype')
 // }
 // $my-font: "Font Name";
+
+// Import 'Apercu Pro' font
+@font-face {
+  font-family: 'Apercu-pro';
+  src:font_url('apercu-pro.ttf');
+}
