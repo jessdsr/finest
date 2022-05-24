@@ -32,10 +32,11 @@ User.create!(
 15.times do
   temp = rand(0..6)
   Listing.create!(
+    name: Faker::Commerce.product_name,
     category: temp,
     user_id: jess.id,
     style: rand(0..8),
-    description: Faker::Lorem.sentences(number: 2),
+    description: Faker::Lorem.sentences(number: 4).join(" "),
     deliverable: (rand <= 0.5),
     price_per_day: rand(100..1000),
     city: Faker::Address.city,
