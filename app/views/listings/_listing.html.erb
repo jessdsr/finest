@@ -9,13 +9,14 @@
         <h2><%=@listing.style%></h2>
         <p><%=@listing.description%></p>
       </div>
+      <div id="price"><p><%=@listing.price_per_day%>€</p></div>
       <div class="product-price-btn">
-        <p><%=@listing.price_per_day%>€</p> <br>
         <button type="button">Book</button>
       </div>
     </div>
   </div>
 
+
   <div id="btn-flat">
-    <%= link_to "Back to listings", listings_path, class: "btn btn-flat"%>
+    <%= link_to "Listings", listings_path, class: "btn btn-flat"%>
   </div>
