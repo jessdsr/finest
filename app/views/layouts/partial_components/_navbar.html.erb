@@ -1,8 +1,10 @@
 <div class="mynav">
   <input type="checkbox" id="mynav-check">
-  <div class="mynav-header">
-    <div class="mynav-title">FINEST <br> FURNITURE</div>
-  </div>
+  <%= link_to root_path do %>
+    <div class="mynav-header">
+      <div class="mynav-title">FINEST <br> FURNITURE</div>
+    </div>
+  <% end %>
   <div class="mynav-btn">
     <label for="mynav-check">
       <span></span>
@@ -10,13 +12,12 @@
       <span></span>
     </label>
   </div>
-
+<%# er %>
   <div class="mynav-links">
-    <a href="/" target="_blank">Home</a>
-    <a href="/" target="_blank">About</a>
-    <a href="/" target="_blank">Services</a>
-    <a href="/" target="_blank">Pricing</a>
-    <a href="/" target="_blank">Contact</a>
-    <a href="/"><i class="fa-solid fa-user"></i></a>
+    <%= link_to "Home", root_path, class: "nav-element #{active?('pages')}" %>
+    <%= link_to "Listings", listings_path, class: "nav-element #{active?('listings')}" %>
+    <%= link_to "Bookings", root_path, class: "nav-element #{active?('bookings')}" %>
+    <%= link_to "TBD", root_path, class: "nav-element #{active?('tbd')}" %>
+    <%= link_to '<i class="fa-solid fa-user"></i>'.html_safe, new_user_session_path, class: "nav-element #{active?('devise/sessions')}" %></h6>
   </div>
 </div>
