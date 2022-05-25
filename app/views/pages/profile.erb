@@ -1,0 +1,7 @@
+<%= @user.email %>
+<% @user.listings.each do |listing| %>
+  <div>
+    <%= listing.name %>
+    <%= image_tag listing.product_image, height: 300, width: 400, crop: :fill %>
+  </div>
+<% end %>

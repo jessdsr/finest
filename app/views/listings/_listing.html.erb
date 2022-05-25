@@ -1,42 +1,21 @@
 <div class="wrapper">
     <div class="product-img">
-      <img src="https://www.gallery-wa.com/wp-content/uploads/wa-design-gallery-isamu-noguchi-akari-lamp-light-sculpture-usa-japon-japan-gifu-ozeki-washi-bamboo-X1-T-1-uai-258x258.jpg" height="420" width="327">
+      <%= image_tag @listing.product_image%>
     </div>
     <div class="product-info">
       <div class="product-text">
-        <h1><%=@listing.name%></h1>
+        <h1><%=@listing.name%></h1><br>
         <h2><%=@listing.category%></h2>
         <h2><%=@listing.style%></h2>
         <p><%=@listing.description%></p>
       </div>
       <div class="product-price-btn">
-        <p><%=@listing.price_per_day%></p>
-        <button type="button">Reserve</button>
+        <p><%=@listing.price_per_day%>€</p> <br>
+        <button type="button">Book</button>
       </div>
     </div>
   </div>
 
-
-<%# <div id="<%= dom_id listing %>
-  <%# <p> %>
-    <%# <strong>Category:</strong> %>
-    <%# <%= listing.category %>
-  <%# </p> %>
-  <%# <p> %>
-    <%# <strong>Style:</strong> %>
-    <%# <%= listing.style %>
-  <%# </p> %>
-  <%# <p> %>
-    <%# <strong>Description:</strong> %>
-    <%# <%= listing.description %>
-  <%# </p> %>
-  <%# <p> %>
-    <%# <strong>Price per day:</strong> %>
-    <%# <%= listing.price_per_day %>
-  <%# </p> %>
-
-  <%# <p> %>
-    <%# <%= image_tag listing.product_image %>
-  <%# </p> %>
-
-<%# </div> %>
+  <div id="btn-flat">
+    <%= link_to "Back to listings", listings_path, class: "btn btn-flat"%>
+  </div>

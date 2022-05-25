@@ -2,8 +2,11 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
+import { initFlatpickr } from "./plugins/flatpickr";
 
+initFlatpickr();
 
+// Search bar
 const clearInput = () => {
   const input = document.getElementsByTagName("input")[0];
   input.value = "";
@@ -11,3 +14,4 @@ const clearInput = () => {
 
 const clearBtn = document.getElementById("clear-btn");
 clearBtn.addEventListener("click", clearInput);
+//

@@ -3,7 +3,6 @@
   width: 654px;
   margin: 50px auto;
   border-radius: 7px 7px 7px 7px;
-  /* VIA CSS MATIC https://goo.gl/cIbnS */
   -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
@@ -17,6 +16,8 @@
 
 .product-img img {
   border-radius: 7px 0 0 7px;
+  height: 420px;
+  width: 327px;
 }
 
 .product-info {
@@ -36,7 +37,6 @@
   margin: 0 0 0 38px;
   padding-top: 52px;
   font-size: 34px;
-  color: #474747;
 }
 
 .product-text h2 {
@@ -51,7 +51,6 @@
 .product-text p {
   height: 125px;
   margin: 0 0 0 38px;
-  color: #8d8d8d;
   line-height: 1.7em;
   font-size: 15px;
   font-weight: lighter;
@@ -103,4 +102,10 @@ span {
 
 .product-price-btn button:hover {
   background-color: #0B454F;
+  color: #ffffff;
+}
+
+#btn-flat {
+  text-align: center;
+  margin: 20px
 }
