@@ -4,11 +4,15 @@
   <br>
   <h3><em>A selection of exceptional furniture with unique designs. Top of the line equipment and services and a dedicated furniture designer.</em></h3> %>
 
+<br>
+
   <form id="my-search-bar" action="">
     <input id="search-input" type="search" required>
     <i class="fa fa-search"></i>
     <a href="javascript:void(0)" id="clear-btn">Clear</a>
   </form>
+
+<br>
 
   <div class="cards">
     <% listings = Listing.all.first(4) %>
@@ -33,3 +37,9 @@
     <% end %>
   </div>
 </div>
+
+  <div id="btn-flat">
+    <%= link_to "Listings", listings_path, class: "btn btn-flat"%>
+  </div>
+  <br>
+  <br>

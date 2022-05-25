@@ -1,8 +1,10 @@
 <p style="color: green"><%= notice %></p>
 
+<br><br><br>
+
 <div id="listings">
   <div class="container">
-    <h1>Listings</h1>
+    <h1>LISTINGS</h1><br><br><br>
     <div class="row">
       <% @listings.each do |listing| %>
         <div class="col-4">
@@ -27,6 +29,12 @@
   </div>
 </div>
 
+<br>
+
+<div id="btn-flat">
 <% if policy(Listing).new? %>
-  <%= link_to "New listing", new_listing_path %>
+  <%= link_to "New Listing", new_listing_path, class: "btn btn-flat"%>
 <% end %>
+</div>
+
+<br><br>
