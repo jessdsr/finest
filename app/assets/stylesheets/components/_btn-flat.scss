@@ -3,19 +3,21 @@
   height: 50px;
   width: 176px;
   box-sizing: border-box;
-  border: transparent;
-  border-radius: 10px;
+  border-color: #13211B;
+  border-radius: 3px;
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: #ffffff;
-  background-color: #13211B;
+  color: #13211B;
+  background-color: #ffffff;
   cursor: pointer;
   outline: none;
+  justify-content: center;
+  padding-top: 13px;
 }
 
 .btn-flat:hover {
-  background-color: #0B454F;
+  background-color: #13211B;
   color: #ffffff;
 }
