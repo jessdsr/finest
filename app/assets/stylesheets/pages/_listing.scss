@@ -37,6 +37,7 @@
   margin: 0 0 0 38px;
   padding-top: 52px;
   font-size: 34px;
+  color: #13211B;
 }
 
 .product-text h2 {
@@ -44,7 +45,7 @@
   font-size: 13px;
   font-weight: 400;
   text-transform: uppercase;
-  color: #d2d2d2;
+  color: #13211B;
   letter-spacing: 0.2em;
 }
 
@@ -55,6 +56,7 @@
   font-size: 15px;
   font-weight: lighter;
   overflow: hidden;
+  color: #a2a2a2;
 }
 
 .product-price-btn {
@@ -88,24 +90,35 @@ span {
   width: 176px;
   margin: 0 40px 0 16px;
   box-sizing: border-box;
-  border: transparent;
-  border-radius: 10px;
+  border-color: #13211B;
+  border-radius: 3px;
   font-size: 14px;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: #ffffff;
-  background-color: #13211B;
+  color: #13211B;
+  background-color: #ffffff;
   cursor: pointer;
   outline: none;
 }
 
 .product-price-btn button:hover {
-  background-color: #0B454F;
+  background-color: #13211B;
   color: #ffffff;
 }
 
 #btn-flat {
   text-align: center;
   margin: 20px
+}
+
+#price {
+  text-align: center;
+  float: right;
+  margin-right: 35px;
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #13211B;
+  letter-spacing: 0.2em;
 }
