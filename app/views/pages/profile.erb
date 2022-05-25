@@ -1,7 +1,19 @@
-<%= @user.email %>
-<% @user.listings.each do |listing| %>
-  <div>
-    <%= listing.name %>
-    <%= image_tag listing.product_image, height: 300, width: 400, crop: :fill %>
-  </div>
-<% end %>
+<div class="wrapper">
+  <% @user.listings.each do |listing| %>
+    <div class="product-img">
+      <%= image_tag listing.product_image, height: 300, width: 400, crop: :fill %>
+    </div>
+    <div class="product-info">
+      <div class="product-text">
+        <h1><%=listing.name%></h1><br>
+        <h2><%=listing.category%></h2>
+        <h2><%=listing.style%></h2>
+        <p><%=listing.description%></p>
+      </div>
+      <div class="product-price-btn">
+        <p><%=listing.price_per_day%>€</p> <br>
+        <button type="button">Book</button>
+      </div>
+    </div>
+  <% end %>
+</div>
