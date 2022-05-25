@@ -59,52 +59,10 @@
   color: #a2a2a2;
 }
 
-.product-price-btn {
-  height: 103px;
-  width: 327px;
-  margin-top: 17px;
-  position: relative;
-}
-
-.product-price-btn p {
-  display: inline-block;
-  position: absolute;
-  top: -13px;
-  height: 50px;
-  margin: 0 0 0 38px;
-  font-size: 28px;
-  font-weight: lighter;
-  color: #474747;
-}
-
 span {
   display: inline-block;
   height: 50px;
   font-size: 34px;
-}
-
-.product-price-btn button {
-  float: right;
-  display: inline-block;
-  height: 50px;
-  width: 176px;
-  margin: 0 40px 0 16px;
-  box-sizing: border-box;
-  border-color: #13211B;
-  border-radius: 3px;
-  font-size: 14px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: #13211B;
-  background-color: #ffffff;
-  cursor: pointer;
-  outline: none;
-}
-
-.product-price-btn button:hover {
-  background-color: #13211B;
-  color: #ffffff;
 }
 
 #btn-flat {
@@ -121,4 +79,8 @@ span {
   text-transform: uppercase;
   color: #13211B;
   letter-spacing: 0.2em;
+}
+
+#book {
+  margin-left: 110px;
 }
