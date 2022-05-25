@@ -1,8 +1,14 @@
 <div class=content-wrap>
 
-  <h1>Exceptional furniture all over the world</h1>
+  <%# <h1>Exceptional furniture all over the world</h1>
   <br>
-  <h3><em>A selection of exceptional furniture with unique designs. Top of the line equipment and services and a dedicated furniture designer.</em></h3>
+  <h3><em>A selection of exceptional furniture with unique designs. Top of the line equipment and services and a dedicated furniture designer.</em></h3> %>
+
+  <form id="my-search-bar" action="">
+    <input id="search-input" type="search" required>
+    <i class="fa fa-search"></i>
+    <a href="javascript:void(0)" id="clear-btn">Clear</a>
+  </form>
 
   <div class="cards">
     <% listings = Listing.all.first(4) %>
@@ -11,24 +17,19 @@
                      "https://inter-fair.com/Content/img/Logos/49/4937/493743/header4.jpg",
                      "https://i.pinimg.com/736x/c6/c7/81/c6c781a9eaaae8814c09878be167561c.jpg"] %>
     <% listings.each_with_index do |listing, index| %>
-      <div class="card content">
-        <div class="card-content">
-          <div class="card-img">
-            <%= image_tag photo_urls[index] %>
-          </div>
-          <div class="card-label">New!</div>
-          <div class="card-infos">
-            <div>
-              <h2><%= listing.name %></h2>
-              <p><%= listing.description %></p>
-            </div>
-            <div>
-              <h2 class="card-trip-pricing"><%= listing.price_per_day %>€</h2>
-              <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-            </div>
-          </div>
-        </div>
-      </div>
+       <div class="card content">
+         <div class="card-content">
+           <div class="card-img">
+             <%= image_tag photo_urls[index] %>
+           </div>
+           <div class="card-infos">
+             <div class="info">
+               <h2><%= listing.name %></h2>
+               <p><%= listing.description %></p>
+             </div>
+           </div>
+         </div>
+       </div>
     <% end %>
   </div>
 </div>

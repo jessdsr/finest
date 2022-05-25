@@ -1,4 +1,7 @@
 /* NAVBAR STYLING STARTS */
+.mynav > :any-link {
+  text-decoration: none;
+}
 .mynav {
   min-height: 140px;
   width: 100%;
@@ -9,11 +12,11 @@
   justify-content: space-between;
 }
 
-.mynav > .mynav-header {
+.mynav > a > .mynav-header {
   display: inline;
 }
 
-.mynav > .mynav-header > .mynav-title {
+.mynav > a > .mynav-header > .mynav-title {
   display: inline-block;
   color: #fff;
   padding: 10px 10px 10px 10px;
@@ -32,6 +35,7 @@
   display: inline;
   float: right;
   font-size: 18px;
+  margin-right: 3vw;
 }
 
 .mynav > .mynav-links > a {
@@ -41,8 +45,9 @@
   color: #efefef;
 }
 
-.mynav > .mynav-links > a:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+.mynav > .mynav-links > a:hover, .nav-element.active {
+  background-color: #337D8C;
+  border-radius: 15%;
 }
 
 .mynav > #mynav-check {
