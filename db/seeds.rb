@@ -10,7 +10,7 @@ require "faker"
 Listing.destroy_all
 User.destroy_all
 
-User.create!(
+admin = User.create!(
   email: "admin@finest.com",
   name: "admin",
   password: "123456",
@@ -35,6 +35,21 @@ User.create!(
     name: Faker::Commerce.product_name,
     category: temp,
     user_id: jess.id,
+    style: rand(0..8),
+    description: Faker::Lorem.sentences(number: 4).join(" "),
+    deliverable: (rand <= 0.5),
+    price_per_day: rand(100..1000),
+    city: Faker::Address.city,
+    product_image: "https://source.unsplash.com/random/720%C3%97720/?#{temp}"
+  )
+end
+
+4.times do
+  temp = rand(0..6)
+  Listing.create!(
+    name: Faker::Commerce.product_name,
+    category: temp,
+    user_id: admin.id,
     style: rand(0..8),
     description: Faker::Lorem.sentences(number: 4).join(" "),
     deliverable: (rand <= 0.5),
