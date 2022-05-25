@@ -19,5 +19,16 @@
     <%= link_to "Bookings", root_path, class: "nav-element #{active?('bookings')}" %>
     <%= link_to "TBD", root_path, class: "nav-element #{active?('tbd')}" %>
     <%= link_to '<i class="fa-solid fa-user"></i>'.html_safe, new_user_session_path, class: "nav-element #{active?('devise/sessions')}" %></h6>
+    <div class="show-login-btn"><i class="fas fa-sign-in-alt"></i> Show Login Form</div>
+
+    <div class="login-box">
+      <div class="hide-login-btn"><i class="fas fa-times"></i></div>
+      <form class="login-form" action="index.html" method="post">
+        <h1>Welcome</h1>
+        <input class="txtb" type="text" name="" placeholder="Username">
+        <input class="txtb" type="password" name="" placeholder="Password">
+        <input class="login-btn" type="submit" name="" value="Login">
+      </form>
+    </div>
   </div>
 </div>

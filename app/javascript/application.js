@@ -4,7 +4,6 @@ import "./controllers"
 import "bootstrap"
 import { initFlatpickr } from "./plugins/flatpickr";
 
-initFlatpickr();
 
 // Search bar
 const clearInput = () => {
@@ -15,3 +14,18 @@ const clearInput = () => {
 const clearBtn = document.getElementById("clear-btn");
 clearBtn.addEventListener("click", clearInput);
 //
+
+
+
+document.addEventListener("turbo:load", () => {
+  console.log("turbo!");
+  initFlatpickr();
+
+  document.querySelector(".show-login-btn").addEventListener("click",function(){
+
+    document.querySelector(".login-box").classList.toggle("showed");
+  });
+  document.querySelector(".hide-login-btn").addEventListener("click",function(){
+    document.querySelector(".login-box").classList.toggle("showed");
+  });
+});
