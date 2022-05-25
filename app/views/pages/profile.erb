@@ -1,19 +1,24 @@
-<div class="wrapper">
-  <% @user.listings.each do |listing| %>
-    <div class="product-img">
-      <%= image_tag listing.product_image, height: 300, width: 400, crop: :fill %>
-    </div>
-    <div class="product-info">
-      <div class="product-text">
-        <h1><%=listing.name%></h1><br>
-        <h2><%=listing.category%></h2>
-        <h2><%=listing.style%></h2>
-        <p><%=listing.description%></p>
+<div class="d-flex content-wrap">
+  <div class="col-md-4">
+    <h1>Hi <%=@user.name%>!</h1><br>
+    <h2><%=@user.bio%></h2>
+    <h2><%=@user.phone_number%></h2>
+    <p>email: <%=@user.email%></p>
+  </div>
+  <div class="my-listings col-md-8">
+    <h1>My furniture:</h1><br>
+    <% @user.listings.each do |listing| %>
+      <div class="product-img mb-3">
+        <%= image_tag listing.product_image, height: 300, width: 400, crop: :fill %>
       </div>
-      <div class="product-price-btn">
-        <p><%=listing.price_per_day%>€</p> <br>
-        <button type="button">Book</button>
+      <div class="product-info mb-3">
+        <div class="product-text">
+          <h1><%=listing.name%></h1><br>
+          <h2><%=listing.category%></h2>
+          <h2><%=listing.style%></h2>
+          <p><%=listing.description%></p>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
