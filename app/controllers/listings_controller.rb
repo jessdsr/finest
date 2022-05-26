@@ -2,6 +2,9 @@ class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_listing, only: %i[show edit update destroy]
 
+  # For turbo frames
+  def forms; end
+
   # GET /listings
   def index
     # Usually we do Listings.all to see the index.
@@ -12,6 +15,13 @@ class ListingsController < ApplicationController
   # GET /listings/1
   def show
     authorize @listing
+
+    @marker = @listing.geocoded.map do |f|
+      {
+        lat: f.latitude,
+        lng: f.longitude
+      }
+    end
   end
 
   # GET /listings/new
