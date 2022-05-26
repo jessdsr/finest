@@ -42,6 +42,8 @@ User.create!(
   password: "123456"
 )
 
+cities = ["Paris", "Metz", "Marseille", "Florence", "Londres", "Washington"]
+
 5.times do |index|
   temp = rand(0..6)
   file = URI.open(cloud_photos[index])
@@ -53,7 +55,7 @@ User.create!(
     description: Faker::Lorem.sentences(number: 4).join(" "),
     deliverable: (rand <= 0.5),
     price_per_day: rand(100..1000),
-    city: Faker::Address.city
+    city: cities.sample
   )
   mylisting.photo.attach(io: file, filename: 'main_photo.png', content_type: 'image/png')
   mylisting.save!
@@ -70,7 +72,7 @@ end
     description: Faker::Lorem.sentences(number: 4).join(" "),
     deliverable: (rand <= 0.5),
     price_per_day: rand(100..1000),
-    city: Faker::Address.city
+    city: cities.sample
   )
   mylisting.photo.attach(io: file, filename: 'main_photo.png', content_type: 'image/png')
   mylisting.save!
