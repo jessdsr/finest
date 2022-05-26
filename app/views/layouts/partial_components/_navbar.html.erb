@@ -16,14 +16,14 @@
         </label>
       </div>
       <div class="mynav-links">
-        <%= link_to "Home", root_path, class: "nav-element #{active?('pages')}" %>
-        <%= link_to "Listings", listings_path, class: "nav-element #{active?('listings')}" %>
-        <%= link_to "Bookings", root_path, class: "nav-element #{active?('bookings')}" %>
-        <%= link_to "TBD", root_path, class: "nav-element #{active?('tbd')}" %>
+        <%= link_to "HOME", root_path, class: "nav-element #{active?('pages')}" %>
+        <%= link_to "LISTINGS", listings_path, class: "nav-element #{active?('listings')}" %>
+        <%= link_to "INSPIRATIONS", root_path, class: "nav-element #{active?('bookings')}" %>
+        <%= link_to "ABOUT US", root_path, class: "nav-element #{active?('tbd')}" %>
       <%# Moved out of div to reposition to the right %>
       </div>
     </div>
-    <div id="btn-settings">
+    <div id="btn-settings" data-controller="login-animation-form">
       <%= link_to 'My finest'.html_safe, new_user_session_path, class: "nav-element #{active?('devise/sessions')}" %></h6>
       <div data-controller="login-animation-form" data-action="click->login-animation-form#showToggle">
     </div>
