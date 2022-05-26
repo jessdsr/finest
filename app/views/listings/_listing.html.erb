@@ -10,9 +10,7 @@
         <p><%=@listing.description%></p>
       </div>
       <div id="price"><p><%=@listing.price_per_day%>€</p></div>
-      <div>
-        <div id= "book"><%= link_to "Book", new_listing_booking_path(listing), class: "btn btn-flat"%></div>
-      </div>
+      <div id= "book"><%= link_to "Book", new_listing_booking_path(listing), class: "btn btn-flat"%></div>
     </div>
   </div>
 
