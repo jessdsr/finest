@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require "faker"
+require "open-uri"
 
 Listing.destroy_all
 User.destroy_all
@@ -31,7 +32,8 @@ User.create!(
 
 15.times do
   temp = rand(0..6)
-  Listing.create!(
+  file = URI.open('https://res.cloudinary.com/guilhem/image/upload/v1653397075/RDnD/Duck-You-rubber-duck-front-Amsterdam-Duck-Store-400x400_rnqxsc.jpg')
+  mylisting = Listing.new(
     name: Faker::Commerce.product_name,
     category: temp,
     user_id: jess.id,
@@ -39,14 +41,16 @@ User.create!(
     description: Faker::Lorem.sentences(number: 4).join(" "),
     deliverable: (rand <= 0.5),
     price_per_day: rand(100..1000),
-    city: Faker::Address.city,
-    product_image: "https://source.unsplash.com/random/720%C3%97720/?#{temp}"
+    city: Faker::Address.city
   )
+  mylisting.photo.attach(io: file, filename: 'main_photo.png', content_type: 'image/png')
+  mylisting.save!
 end
 
 4.times do
   temp = rand(0..6)
-  Listing.create!(
+  file = URI.open('https://res.cloudinary.com/guilhem/image/upload/v1653397075/RDnD/Duck-You-rubber-duck-front-Amsterdam-Duck-Store-400x400_rnqxsc.jpg')
+  mylisting = Listing.new(
     name: Faker::Commerce.product_name,
     category: temp,
     user_id: admin.id,
@@ -54,7 +58,8 @@ end
     description: Faker::Lorem.sentences(number: 4).join(" "),
     deliverable: (rand <= 0.5),
     price_per_day: rand(100..1000),
-    city: Faker::Address.city,
-    product_image: "https://source.unsplash.com/random/720%C3%97720/?#{temp}"
+    city: Faker::Address.city
   )
+  mylisting.photo.attach(io: file, filename: 'main_photo.png', content_type: 'image/png')
+  mylisting.save!
 end
