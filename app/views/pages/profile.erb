@@ -10,7 +10,7 @@
     <% @user.listings.each do |listing| %>
     <div>
       <div class="product-img mb-3">
-        <%= image_tag listing.product_image, height: 300, width: 400, crop: :fill %>
+        <%= image_tag listing.image, height: 300, width: 400, crop: :fill %>
       </div>
       <div class="product-info mb-3">
         <div class="product-text">
