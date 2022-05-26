@@ -2,12 +2,10 @@
   <div class="">
     <div class="card-white" id="profile">
     <h1>Hi <%=@user.name%>! 🤗</h1>
-      <%= image_tag "me.png", class: "img-circle" %>
-      <% if !@user.bio.nil? %>
+      <%= image_tag "../app/assets/images/me.jpeg", class: "img-circle" %>
       <h2><%=@user.bio%></h2>
       <p>📱 <%=@user.phone_number%></p>
       <p>💌 <%=@user.email%></p>
-      <% end %>
       <p>Work hard, play harder. Dreamer. Entrepreuneur.</p>
     </div>
   </div>
