@@ -9,7 +9,7 @@
     <h1>My furniture:</h1><br>
     <% @user.listings.each do |listing| %>
       <div class="product-img mb-3">
-        <%= image_tag listing.image, height: 300, width: 400, crop: :fill %>
+        <%= image_tag listing.photo, height: 300, width: 400, crop: :fill %>
       </div>
       <div class="product-info mb-3">
         <div class="product-text">
