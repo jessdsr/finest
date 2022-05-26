@@ -8,6 +8,7 @@
   <div class="my-listings col-md-8">
     <h1>My furniture:</h1><br>
     <% @user.listings.each do |listing| %>
+    <div>
       <div class="product-img mb-3">
         <%= image_tag listing.image, height: 300, width: 400, crop: :fill %>
       </div>
@@ -19,6 +20,7 @@
           <p><%=listing.description%></p>
         </div>
       </div>
+    </div>
     <% end %>
   </div>
 </div>
