@@ -3,13 +3,16 @@
   text-decoration: none;
 }
 .mynav {
-  min-height: 140px;
+  padding-top: 40px;
   width: 100%;
-  background-color: #13211B;
+  background-color: #ffffff;
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  border-bottom: thin solid #eae8e3;
 }
 
 .mynav > a > .mynav-header {
@@ -17,14 +20,14 @@
 }
 
 .mynav > a > .mynav-header > .mynav-title {
-  display: inline-block;
-  color: #fff;
+  // changed display to inline and cut padding to align center title
+  display: inline;
+  color: #13211B;
   padding: 10px 10px 10px 10px;
   letter-spacing: 0.56em;
   font-weight: 700;
   font-size: 3.88vmin;
   line-height: 45px;
-  padding-left: 5em;
 }
 
 .mynav > .mynav-btn {
@@ -42,12 +45,13 @@
   display: inline-block;
   padding: 13px 10px 13px 10px;
   text-decoration: none;
-  color: #efefef;
+  color: #13211B;
+  border-bottom: thin solid white;
 }
 
-.mynav > .mynav-links > a:hover, .nav-element.active {
-  background-color: #337D8C;
-  border-radius: 15%;
+.mynav > .mynav-links > a:hover {
+  transition-duration: 0.3s;
+  border-bottom: thin solid;
 }
 
 .mynav > #mynav-check {
@@ -98,4 +102,11 @@
     height: calc(100vh - 50px);
     overflow-y: auto;
   }
+}
+
+.mynav-horizontal{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #ffffff;
 }
