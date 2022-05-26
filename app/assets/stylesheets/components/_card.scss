@@ -166,7 +166,6 @@
   margin: 0;
 }
 
-
 .card-content .card-infos {
   padding: 16px;
   display: flex;
@@ -181,4 +180,48 @@
   right: 16px;
   bottom: -20px;
   width: 40px;
+}
+
+.card-white {
+  background-color: white;
+  padding: 35px;
+  border-radius: 4px;
+  margin: 20px 0px;
+  text-align: center;
+  width: 300px;
+  height: 500px;
+}
+
+.content-wrap-dashboard {
+  margin: 40px auto;
+}
+
+.dashboard-product-card {
+  width: 830px;
+}
+
+.dashboard-product-img {
+  float: left;
+  height: 420px;
+  width: 470px;
+}
+
+.dashboard-product-img img {
+  border-radius: 3px 0px 0px 3px;
+  height: 420px;
+  width: 470px;
+}
+
+#profile {
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    .img-circle {
+      border-radius: 50%;
+      object-fit: cover;
+      width : 150px;
+      height : 150px;
+    }
+  }
 }
