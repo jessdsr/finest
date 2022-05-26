@@ -12,6 +12,13 @@ class ListingsController < ApplicationController
   # GET /listings/1
   def show
     authorize @listing
+
+    @marker = @listing.geocoded.map do |f|
+      {
+        lat: f.latitude,
+        lng: f.longitude
+      }
+    end
   end
 
   # GET /listings/new
