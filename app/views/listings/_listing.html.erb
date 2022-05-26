@@ -1,4 +1,4 @@
-<div class="wrapper">
+  <div class="wrapper">
     <div class="product-img">
       <%= image_tag @listing.photo%>
     </div>
@@ -13,7 +13,6 @@
       <div id= "book"><%= link_to "Book", new_listing_booking_path(listing), class: "btn btn-flat"%></div>
     </div>
   </div>
-
 
   <div id="btn-flat">
     <%= link_to "Listings", listings_path, class: "btn btn-flat"%>
