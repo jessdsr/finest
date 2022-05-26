@@ -1,15 +1,22 @@
-<div class="d-flex content-wrap">
-  <div class="col-md-4">
-    <h1>Hi <%=@user.name%>!</h1><br>
-    <h2><%=@user.bio%></h2>
-    <h2><%=@user.phone_number%></h2>
-    <p>email: <%=@user.email%></p>
+<div class="d-flex content-wrap-dashboard">
+  <div class="">
+    <div class="card-white" id="profile">
+    <h1>Hi <%=@user.name%>! 🤗</h1>
+      <img src="../images/test.png" class="img-circle" alt="username">
+      <% if !@user.bio.nil? %>
+      <h2><%=@user.bio%></h2>
+      <p>📱 <%=@user.phone_number%></p>
+      <p>💌 <%=@user.email%></p>
+      <% end %>
+      <p>Work hard, play harder. Dreamer. Entrepreuneur.</p>
+    </div>
   </div>
-  <div class="my-listings col-md-8">
-    <h1>My furniture:</h1><br>
+
+  <div class="my-listings">
+    <h1>My Finest</h1><br>
     <% @user.listings.each do |listing| %>
-    <div>
-      <div class="product-img mb-3">
+    <div class="dashboard-product-card">
+      <div class="dashboard-product-img mb-3">
         <%= image_tag listing.photo, height: 300, width: 400, crop: :fill %>
       </div>
       <div class="product-info mb-3">
