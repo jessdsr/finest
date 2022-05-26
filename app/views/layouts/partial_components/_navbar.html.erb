@@ -1,34 +1,44 @@
-<div class="mynav">
-  <input type="checkbox" id="mynav-check">
-  <%= link_to root_path do %>
-    <div class="mynav-header">
-      <div class="mynav-title">FINEST <br> FURNITURE</div>
+<div>
+  <div>
+    <div class="mynav">
+      <input type="checkbox" id="mynav-check">
+      <%= link_to root_path do %>
+        <div class="mynav-header">
+          <div class="mynav-title">FINEST FURNITURE
+          </div>
+        </div>
+      <% end %>
+      <div class="mynav-btn">
+        <label for="mynav-check">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+      </div>
+      <div class="mynav-links">
+        <%= link_to "Home", root_path, class: "nav-element #{active?('pages')}" %>
+        <%= link_to "Listings", listings_path, class: "nav-element #{active?('listings')}" %>
+        <%= link_to "Bookings", root_path, class: "nav-element #{active?('bookings')}" %>
+        <%= link_to "TBD", root_path, class: "nav-element #{active?('tbd')}" %>
+      <%# Moved out of div to reposition to the right %>
+      </div>
     </div>
-  <% end %>
-  <div class="mynav-btn">
-    <label for="mynav-check">
-      <span></span>
-      <span></span>
-      <span></span>
-    </label>
+    <div id="btn-settings">
+      <%= link_to 'My finest'.html_safe, new_user_session_path, class: "nav-element #{active?('devise/sessions')}" %></h6>
+      <div data-controller="login-animation-form" data-action="click->login-animation-form#showToggle">
+    </div>
   </div>
-<%# er %>
-  <div class="mynav-links">
-    <%= link_to "Home", root_path, class: "nav-element #{active?('pages')}" %>
-    <%= link_to "Listings", listings_path, class: "nav-element #{active?('listings')}" %>
-    <%= link_to "Bookings", root_path, class: "nav-element #{active?('bookings')}" %>
-    <%= link_to "TBD", root_path, class: "nav-element #{active?('tbd')}" %>
-    <%= link_to '<i class="fa-solid fa-user"></i>'.html_safe, new_user_session_path, class: "nav-element #{active?('devise/sessions')}" %></h6>
-    <div class="show-login-btn" data-controller="login-animation-form" data-action="click->login-animation-form#showToggle"><i class="fas fa-sign-in-alt"></i> Show Login Form</div>
-
-    <div class="login-box" data-controller="login-animation-form">
-      <div class="hide-login-btn" data-action="click->login-animation-form#showToggle"><i class="fas fa-times"></i></div>
-      <form class="login-form" action="index.html" method="post" data-login-animation-form-target="form">
-        <h1>Welcome</h1>
+  <%# commented second signin button %>
+  <%# <i class="fas fa-sign-in-alt"></i> Show Login Form %>
+  </div>
+  <div class="login-box" data-controller="login-animation-form">
+    <div class="hide-login-btn" data-action="click->login-animation-form#showToggle"><i class="fas fa-times"></i>
+    </div>
+    <form class="login-form" action="index.html" method="post" data-login-animation-form-target="form">
+      <h1>Welcome</h1>
         <input class="txtb" type="text" name="" placeholder="Username">
         <input class="txtb" type="password" name="" placeholder="Password">
         <input class="login-btn" type="submit" name="" value="Login">
-      </form>
-    </div>
+    </form>
   </div>
 </div>
