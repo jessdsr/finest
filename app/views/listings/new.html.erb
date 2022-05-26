@@ -1,8 +1,38 @@
 <h1>Add a furniture</h1>
 
-<%= render "form", listing: @listing %>
+  <div class="wrapper">
+    <div class="product-img">
+      <%=  %>
+    </div>
+    <div class="product-info">
+      <div class="product-text">
+        <turbo-frame id="name">
+          <h1><%= link_to "NAME", forms_path(@listing) %></h1>
+        </turbo-frame><br>
+        <turbo-frame id="category">
+          <h2><%= link_to "CATEGORY", root_path(@list) %></h2>
+        </turbo-frame>
+        <turbo-frame id="style">
+          <h2><%= link_to "STYLE", root_path(@list) %></h2>
+        </turbo-frame>
+        <turbo-frame id="description">
+          <p><%= link_to "DESCRIPTION", root_path(@list) %></p>
+        </turbo-frame>
+      </div>
+      <turbo-frame>
+        <div id="price">
+          <p><%= link_to "... €", root_path(@list) %></p>
+        </div>
+      </turbo-frame>
+      <div id= "book">
+        <%= link_to "Confirm", new_listing_path(@listing), class: "btn btn-flat"%>
+      </div>
+    </div>
+  </div>
 
-<br>
+  <div id="btn-flat">
+    <%= link_to "Listings", listings_path, class: "btn btn-flat"%>
+  </div>
 
 <div>
   <%= link_to "Back to listings", listings_path %>

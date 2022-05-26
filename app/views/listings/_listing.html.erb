@@ -1,4 +1,4 @@
-<div class="wrapper">
+  <div class="wrapper">
     <div class="product-img">
       <%= image_tag @listing.photo%>
     </div>
@@ -14,9 +14,15 @@
     </div>
   </div>
 
+
 <div class="wrapper">
   <div class="map"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>  <br><br>
+
+  <div id="btn-flat">
+    <%= link_to "Listings", listings_path, class: "btn btn-flat"%>
+  </div>
+  <br><br>
