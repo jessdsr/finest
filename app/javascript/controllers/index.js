@@ -10,5 +10,8 @@ application.register("hello", HelloController)
 import LoginAnimationFormController from "./login_animation_form_controller.js"
 application.register("login-animation-form", LoginAnimationFormController)
 
+import MapController from "./map_controller.js"
+application.register("map", MapController)
+
 import SearchBarController from "./search_bar_controller.js"
 application.register("search-bar", SearchBarController)
