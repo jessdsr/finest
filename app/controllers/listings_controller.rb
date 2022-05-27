@@ -9,7 +9,12 @@ class ListingsController < ApplicationController
   def index
     # Usually we do Listings.all to see the index.
     # Instead we want to use the resolve action defined in the listing_policy.rb
-    @listings = policy_scope(Listing)
+    if params[:query].present?
+      values = params[:query].split(" ")
+      @listings = policy_scope(Listing.where(style: values).or(Listing.where(category: values)).distinct)
+    else
+      @listings = policy_scope(Listing)
+    end
   end
 
   # GET /listings/1
