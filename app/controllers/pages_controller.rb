@@ -10,4 +10,7 @@ class PagesController < ApplicationController
 
   def forms
   end
+
+  def about
+  end
 end
