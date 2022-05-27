@@ -1,8 +1,8 @@
-<br><br>
+<br><br><br>
 
 <div id="listings">
   <div class="container">
-    <h2>BROWSE LISTINGS</h2><br><br>
+    <h2>BROWSE COLLECTION</h2><br><br>
 
 
     <%= form_tag listings_path, method: :get, id: "my-search-bar" do %>
@@ -17,7 +17,6 @@
     <% end %>
 
     <br><br>
-    <h1>COLLECTION</h1><br><br><br>
     <div class="row">
       <% @listings.each do |listing| %>
         <div class="col-4">
