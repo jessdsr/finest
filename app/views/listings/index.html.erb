@@ -24,7 +24,7 @@
           <div class="card content mb-4">
             <div class="card-content">
               <div class="card-img">
-                <%= image_tag listing.photo%>
+                <%= cl_image_tag listing.photo.key %>
               </div>
               <div class="card-infos">
                 <div class="info">

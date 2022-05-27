@@ -1,6 +1,6 @@
   <div class="wrapper">
     <div class="product-img">
-      <%= image_tag @listing.photo%>
+      <%= cl_image_tag @listing.photo.key %>
     </div>
     <div class="product-info">
       <div class="product-text">

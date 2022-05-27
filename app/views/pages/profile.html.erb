@@ -19,7 +19,7 @@
     <% @user.listings.each do |listing| %>
     <div class="dashboard-product-card">
       <div class="dashboard-product-img mb-3">
-        <%= image_tag listing.photo, height: 300, width: 400, crop: :fill %>
+        <%= cl_image_tag listing.photo.key, height: 300, width: 400, crop: :fill %>
       </div>
       <div class="product-info mb-3">
         <div class="product-text">
