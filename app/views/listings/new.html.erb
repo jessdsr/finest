@@ -1,33 +1,53 @@
 <h1>Add a furniture</h1>
+<i class="fa-light fa-plus-large"></i>
 
   <div class="wrapper">
+  <%= simple_form_for(@listing) do |f| %>
     <div class="product-img">
-      <%=  %>
+
+      <%= f.input :photo, as: :file, label: false %>
     </div>
     <div class="product-info">
       <div class="product-text">
-        <turbo-frame id="name">
-          <h1><%= link_to "NAME", forms_path(@listing) %></h1>
-        </turbo-frame><br>
-        <turbo-frame id="category">
-          <h2><%= link_to "CATEGORY", root_path(@list) %></h2>
-        </turbo-frame>
-        <turbo-frame id="style">
-          <h2><%= link_to "STYLE", root_path(@list) %></h2>
-        </turbo-frame>
-        <turbo-frame id="description">
-          <p><%= link_to "DESCRIPTION", root_path(@list) %></p>
-        </turbo-frame>
-      </div>
-      <turbo-frame>
-        <div id="price">
-          <p><%= link_to "... €", root_path(@list) %></p>
+          <div data-controller="inputs">
+            <h1 class="" data-inputs-target="label"
+              data-action="click->inputs#toggleInput">Namezzz</h1>
+            <%= f.input :name, label: false, input_html: {data: { inputs_target: 'input' }, class:"special-input hidden"} %>
+          </div>
+          <div data-controller="inputs">
+            <h2 data-inputs-target="label"
+                  data-action="click->inputs#toggleInput">CATEGORY</h2>
+            <%= f.input :category, collection: Listing.categories.map { |e| [e[0],e[0]] }, label: false, input_html: {data: { inputs_target: 'input' }, class:"special-input hidden"} %>
+          </div>
+          <div data-controller="inputs">
+            <h2 data-inputs-target="label"
+                  data-action="click->inputs#toggleInput">STYLE</h2>
+            <%= f.input :style, collection: Listing.styles.map { |e| [e[0],e[0]] }, label: false, input_html: {data: { inputs_target: 'input' }, class:"special-input hidden"} %>
+          </div>
+          <div data-controller="inputs">
+            <h2 data-inputs-target="label"
+                  data-action="click->inputs#toggleInput">DESCRIPTION</h2>
+            <%= f.input :description, label: false, input_html: {data: { inputs_target: 'input' }, class:"special-input hidden"} %>
+          </div>
         </div>
-      </turbo-frame>
-      <div id= "book">
-        <%= link_to "Confirm", new_listing_path(@listing), class: "btn btn-flat"%>
-      </div>
+        <div id="price">
+          <div data-controller="inputs">
+            <h2 data-inputs-target="label"
+                  data-action="click->inputs#toggleInput">... €</h2>
+            <%= f.input :price_per_day, label: false, input_html: {data: { inputs_target: 'input' }, class:"special-input hidden"} %>
+          </div>
+        </div>
+        <div data-controller="inputs">
+          <h2 data-inputs-target="label"
+            data-action="click->inputs#toggleInput">CITY</h2>
+          <%= f.input :city, label: false, input_html: {data: { inputs_target: 'input' }, class:"special-input hidden"} %>
+        </div>
+
+        <div id= "book">
+          <%= link_to "Confirm", new_listing_path(@listing), class: "btn btn-flat"%>
+        </div>
     </div>
+    <% end %>
   </div>
 
   <div id="btn-flat">
