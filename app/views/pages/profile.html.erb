@@ -1,18 +1,17 @@
 <div class="d-flex content-wrap-dashboard">
-  <div class="">
+  <div>
     <div class="card-white" id="profile">
     <h1>Hi <%=@user.name%>! 🤗</h1>
-      <img src="../images/test.png" class="img-circle" alt="username">
+      <img src="https://photos.google.com/share/AF1QipO5gGwV9Xub-sOEsFTl0U4kRg1fOZE0MnoefTzkiALon7AUy8I4RhAVBCsdu2qvVw/photo/AF1QipNmbt31RmuqAwwCmKYqpPM_-g8c3EgJ47mv2ust?key=TVFFZFBTcFNvaWlKekpVVDlKWU5WcVA4VTJPOWd3" class="img-circle" alt="username">
       <% if !@user.bio.nil? %>
       <h2><%=@user.bio%></h2>
       <p>📱 <%=@user.phone_number%></p>
       <p>💌 <%=@user.email%></p>
       <% end %>
-      <p>Work hard, play harder. Dreamer. Entrepreuneur.</p>
     </div>
   </div>
 
-  <div class="my-listings">
+  <div class="my-test">
     <h1>My Finest</h1><br>
     <% @user.listings.each do |listing| %>
     <div class="dashboard-product-card">
