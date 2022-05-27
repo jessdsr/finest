@@ -7,6 +7,7 @@ export default class extends Controller {
   }
 
   connect() {
+    console.log('im connected');
     mapboxgl.accessToken = this.apiKeyValue
 
     this.map = new mapboxgl.Map({
@@ -16,6 +17,11 @@ export default class extends Controller {
     this.#addMarkersToMap()
     this.#fitMapToMarkers()
   }
+
+  // toggleMap() {
+  //   // this.targetMap.toggle('.d-none');
+  //   console.log()
+  // }
 
   #addMarkersToMap() {
     this.markersValue.forEach((marker) => {

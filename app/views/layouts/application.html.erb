@@ -16,7 +16,9 @@
   <body>
     <div class="mywrapper">
       <%= render "layouts/partial_components/navbar" %>
-      <%= yield %>
+      <div class="content-wrapper">
+        <%= yield %>
+      </div>
       <%= render "layouts/partial_components/footer" %>
     </div>
   </body>
