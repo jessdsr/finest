@@ -1,17 +1,20 @@
 <div class="d-flex content-wrap-dashboard">
   <div>
     <div class="card-white" id="profile">
-    <h1>Hi <%=@user.name%>! 🤗</h1>
-      <img src="https://photos.google.com/share/AF1QipO5gGwV9Xub-sOEsFTl0U4kRg1fOZE0MnoefTzkiALon7AUy8I4RhAVBCsdu2qvVw/photo/AF1QipNmbt31RmuqAwwCmKYqpPM_-g8c3EgJ47mv2ust?key=TVFFZFBTcFNvaWlKekpVVDlKWU5WcVA4VTJPOWd3" class="img-circle" alt="username">
-      <% if !@user.bio.nil? %>
-      <h2><%=@user.bio%></h2>
-      <p>📱 <%=@user.phone_number%></p>
+    <h1>Hi <%=@user.name%>!</h1>
+      <%= image_tag "https://ca.slack-edge.com/T02NE0241-U03AV0QKPEX-0e14fcf82566-192", class: "img-circle" %>
+      <br><br>
+      <h2>Fine Art Gallerist in Paris</h2>
+      <br>
+      <p>📱 + 33 6 42 42 42 42</p>
       <p>💌 <%=@user.email%></p>
-      <% end %>
+      <div id="btn-flat">
+        <%= link_to "Edit my profile", listings_path, class: "btn btn-flat"%>
+      </div>
     </div>
   </div>
 
-  <div class="my-test">
+  <div class="my-listings">
     <h1>My Finest</h1><br>
     <% @user.listings.each do |listing| %>
     <div class="dashboard-product-card">
