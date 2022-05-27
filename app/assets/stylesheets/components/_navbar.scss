@@ -51,7 +51,11 @@
 
 .mynav > .mynav-links > a:hover {
   transition-duration: 0.3s;
-  border-bottom: thin solid;
+  border-bottom: thin solid  black;
+}
+
+.mynav > .mynav-links > .nav-element.active {
+  border-bottom: thin solid rgb(201, 201, 201);
 }
 
 .mynav > #mynav-check {
@@ -110,3 +114,5 @@
   align-items: center;
   background-color: #ffffff;
 }
+
+// test

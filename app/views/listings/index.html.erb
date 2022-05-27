@@ -1,8 +1,22 @@
-<br><br>
+<br><br><br>
 
 <div id="listings">
   <div class="container">
-    <h1>COLLECTION</h1><br><br><br>
+    <h2>BROWSE COLLECTION</h2><br><br>
+
+
+    <%= form_tag listings_path, method: :get, id: "my-search-bar" do %>
+      <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      id: 'search-input',
+      type: "search",
+      placeholder: "Find a listing" %>
+      <i class="fa fa-search"></i>
+      <%= submit_tag "Search", id: 'clear-btn'%>
+    <% end %>
+
+    <br><br>
     <div class="row">
       <% @listings.each do |listing| %>
         <div class="col-4">

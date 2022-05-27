@@ -42,15 +42,15 @@
   transition: all 1s;
 }
 
-#my-search-bar:hover,
-#my-search-bar:valid{
-    width: 17vw;
-    cursor: pointer;
+#my-search-bar:hover {
+  width: 20vw;
 }
+
 
 #my-search-bar:hover #search-input,
 #my-search-bar:valid #search-input{
     display: block;
+    background: white;
 }
 
 #my-search-bar:hover .fa,
@@ -75,3 +75,5 @@
 #my-search-bar:valid a {
   display: block;
 }
+
+// test
