@@ -225,3 +225,31 @@
     }
   }
 }
+
+.about-card-white {
+  background-color: white;
+  padding: 35px;
+  border-radius: 3px;
+  text-align: center;
+  border: 10px solid;
+  border-color: #F4F4F4;
+}
+
+.img-circle {
+  border-radius: 50%;
+  object-fit: cover;
+  width : 150px;
+  height : 150px;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
