@@ -1,6 +1,6 @@
 <br><br>
 <div class="container">
-  <div class="form-container">
+  <div class="form-container" data-controller="flatpicker">
     <%= simple_form_for [@listing, @booking] do |f| %>
       <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
       <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
@@ -8,3 +8,5 @@
     <% end %>
   </div>
 </div>
+
+<br><br>
