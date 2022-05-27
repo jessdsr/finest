@@ -1,6 +1,4 @@
-<p style="color: green"><%= notice %></p>
-
-<br><br><br>
+<br><br>
 
 <div id="listings">
   <div class="container">
@@ -18,14 +16,8 @@
       <%= submit_tag "Search", id: 'clear-btn'%>
     <% end %>
 
-    <%# <form data-controller="search-bar" id="my-search-bar" action="">
-      <input id="search-input" type="search" data-search-bar-target="input" required>
-      <i class="fa fa-search"></i>
-      <%= link_to "Clear", listings_path, id: 'clear-btn', data: { action: "click->search-bar#clearInput" } %>
-      <%# <a href="javascript:void(0)" id="clear-btn" data-action="click->search-bar#clearInput">Clear</a> %>
-    <%# </form> %>
-
     <br><br>
+    <h1>COLLECTION</h1><br><br><br>
     <div class="row">
       <% @listings.each do |listing| %>
         <div class="col-4">

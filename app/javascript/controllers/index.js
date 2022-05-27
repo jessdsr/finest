@@ -7,6 +7,9 @@ import { application } from "./application"
 import HelloController from "./hello_controller.js"
 application.register("hello", HelloController)
 
+import InputsController from "./inputs_controller.js"
+application.register("inputs", InputsController)
+
 import LoginAnimationFormController from "./login_animation_form_controller.js"
 application.register("login-animation-form", LoginAnimationFormController)
 

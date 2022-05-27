@@ -2,8 +2,15 @@
 
 <div>
   <% if policy(@listing).edit? %>
-    <%= link_to "Edit this listing", edit_listing_path(@listing) %> |
-    <%= button_to "Destroy this listing", @listing, method: :delete %>
+      <div id="btn-flat">
+    <%= link_to "Edit", edit_listing_path(@listing), class: "btn btn-flat"%>
+      </div> |
+      <div id="btn-flat">
+    <%= button_to "Delete", @listing, method: :delete, class: "btn btn-flat" %>
+      </div>
   <% end %>
-
+<br><br>
+    <div id="btn-flat">
+      <%= link_to "Listings", listings_path, class: "btn btn-flat"%>
+    </div>
 </div>
