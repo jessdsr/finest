@@ -1,10 +1,9 @@
 <br><br>
 
-<h1>Add a furniture</h1>
-<i class="fa-light fa-plus-large"></i>
+<h1>NEW</h1>
 
-  <div class="wrapper">
-  <%= simple_form_for(@listing) do |f| %>
+  <div class="wrapper" style="margin-top: 15px">
+  <%= simple_form_for @listing, html: { autocomplete: 'off' }  do |f| %>
     <div class="product-img">
 
       <%= f.input :photo, as: :file, label: false %>
@@ -13,40 +12,42 @@
       <div class="product-text">
           <div data-controller="inputs">
             <h1 class="" data-inputs-target="label"
-              data-action="click->inputs#toggleInput">Namezzz</h1>
-            <%= f.input :name, label: false, input_html: {data: { inputs_target: 'input' }, class:"special-input hidden"} %>
+              data-action="click->inputs#toggleInput">Name</h1>
+            <%= f.input :name, label: false, input_html: {data: { inputs_target: 'input', action:'keyup->inputs#update' }, class:"special-input hidden"} %>
           </div>
           <div data-controller="inputs">
             <h2 data-inputs-target="label"
                   data-action="click->inputs#toggleInput">CATEGORY</h2>
-            <%= f.input :category, collection: Listing.categories.map { |e| [e[0],e[0]] }, label: false, input_html: {data: { inputs_target: 'input' }, class:"special-input hidden"} %>
+            <%= f.input :category, collection: Listing.categories.map { |e| [e[0],e[0]] }, label: false, input_html: {data: { inputs_target: 'input', action:'click->inputs#update' }, class:"special-input hidden"} %>
           </div>
           <div data-controller="inputs">
             <h2 data-inputs-target="label"
                   data-action="click->inputs#toggleInput">STYLE</h2>
-            <%= f.input :style, collection: Listing.styles.map { |e| [e[0],e[0]] }, label: false, input_html: {data: { inputs_target: 'input' }, class:"special-input hidden"} %>
+            <%= f.input :style, collection: Listing.styles.map { |e| [e[0],e[0]] }, label: false, input_html: {data: { inputs_target: 'input', action:'click->inputs#update' }, class:"special-input hidden"} %>
           </div>
           <div data-controller="inputs">
             <h2 data-inputs-target="label"
                   data-action="click->inputs#toggleInput">DESCRIPTION</h2>
-            <%= f.input :description, label: false, input_html: {data: { inputs_target: 'input' }, class:"special-input hidden"} %>
+            <%= f.input :description, label: false, input_html: {data: { inputs_target: 'input', action:'keyup->inputs#update' }, class:"special-input hidden"} %>
+          </div>
+          <div data-controller="inputs">
+            <h2 data-inputs-target="label"
+              data-action="click->inputs#toggleInput">City</h2>
+            <%= f.input :city, label: false, input_html: {data: { inputs_target: 'input', action:'keyup->inputs#update' }, class:"special-input hidden"} %>
           </div>
         </div>
         <div id="price">
           <div data-controller="inputs">
             <h2 data-inputs-target="label"
                   data-action="click->inputs#toggleInput">... €</h2>
-            <%= f.input :price_per_day, label: false, input_html: {data: { inputs_target: 'input' }, class:"special-input hidden"} %>
+            <%= f.input :price_per_day, label: false, input_html: {data: { inputs_target: 'input', action:'keyup->inputs#update' }, class:"special-input hidden"} %>
           </div>
-        </div>
-        <div data-controller="inputs">
-          <h2 data-inputs-target="label"
-            data-action="click->inputs#toggleInput">CITY</h2>
-          <%= f.input :city, label: false, input_html: {data: { inputs_target: 'input' }, class:"special-input hidden"} %>
         </div>
 
         <div id= "book">
-          <%= link_to "Confirm", new_listing_path(@listing), class: "btn btn-flat"%>
+            <div class="form-actions">
+              <%= f.button :submit, value: "CREATE" %>
+            </div>
         </div>
     </div>
     <% end %>
