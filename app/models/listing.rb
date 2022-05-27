@@ -29,4 +29,6 @@ class Listing < ApplicationRecord
     decor: 5,
     storage: 6
   }
+
+
 end
