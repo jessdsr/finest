@@ -24,7 +24,7 @@
       </div>
     </div>
     <div id="btn-settings" data-controller="login-animation-form">
-      <%= link_to 'My finest'.html_safe, new_user_session_path, class: "nav-element #{active?('devise/sessions')}" %></h6>
+      <%= link_to 'My finest', profile_path, class: "nav-element #{active?('devise/sessions')}" %></h6>
       <div data-controller="login-animation-form" data-action="click->login-animation-form#showToggle">
     </div>
   </div>
