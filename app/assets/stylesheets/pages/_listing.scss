@@ -74,9 +74,11 @@ span {
 .my-listings {
   overflow: scroll;
   height: 700px;
-  margin-bottom: 150px;
+  margin: 150px;
   padding: 0px 50px;
   width: auto;
+  margin: auto;
+  color: red;
 }
 
 #price {

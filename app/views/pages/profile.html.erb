@@ -1,14 +1,16 @@
 <div class="d-flex content-wrap-dashboard">
-  <div class="">
+  <div>
     <div class="card-white" id="profile">
-    <h1>Hi <%=@user.name%>! 🤗</h1>
-      <img src="../images/test.png" class="img-circle" alt="username">
-      <% if !@user.bio.nil? %>
-      <h2><%=@user.bio%></h2>
-      <p>📱 <%=@user.phone_number%></p>
+    <h1>Hi <%=@user.name%>!</h1>
+      <%= image_tag "https://ca.slack-edge.com/T02NE0241-U03AV0QKPEX-0e14fcf82566-192", class: "img-circle" %>
+      <br><br>
+      <h2>Fine Art Gallerist in Paris</h2>
+      <br>
+      <p>📱 + 33 6 42 42 42 42</p>
       <p>💌 <%=@user.email%></p>
-      <% end %>
-      <p>Work hard, play harder. Dreamer. Entrepreuneur.</p>
+      <div id="btn-flat">
+        <%= link_to "Edit my profile", listings_path, class: "btn btn-flat"%>
+      </div>
     </div>
   </div>
 

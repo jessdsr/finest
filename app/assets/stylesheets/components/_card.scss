@@ -193,7 +193,8 @@
 }
 
 .content-wrap-dashboard {
-  margin: 40px auto;
+  margin: 40px;
+  justify-content: center;
 }
 
 .dashboard-product-card {
@@ -217,6 +218,7 @@
     font-size: 16px;
     font-weight: bold;
     margin: 0;
+    text-align: center;
     .img-circle {
       border-radius: 50%;
       object-fit: cover;
