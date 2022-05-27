@@ -4,9 +4,6 @@
 
 import { application } from "./application"
 
-import FlatpickerController from "./flatpicker_controller.js"
-application.register("flatpicker", FlatpickerController)
-
 import HelloController from "./hello_controller.js"
 application.register("hello", HelloController)
 

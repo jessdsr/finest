@@ -2,6 +2,8 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
+import "flatpickr"
+
 
   // document.querySelector(".show-login-btn").addEventListener("click",function(){
 
